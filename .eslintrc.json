@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "@react-native-community",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks",
+    "react-native",
+    "react",
+    "simple-import-sort",
+    "sort-destructure-keys",
+    "sort-keys-fix",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "variables": false
+      }
+    ],
+    "prettier/prettier": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-native/no-inline-styles": "error",
+    "react-native/no-raw-text": "error",
+    "react-native/no-unused-styles": "error",
+    "react-native/split-platform-components": "error",
+    "react/jsx-sort-props": "error",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
+    "sort-destructure-keys/sort-destructure-keys": "error",
+    "sort-keys-fix/sort-keys-fix": "error"
+  }
+}
