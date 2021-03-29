@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native'
 
 export const colors = {
   accent: '#5dc3c4',
+  black: '#000',
   dark: {
     background: '#000',
     backgroundDark: '#18181b',
@@ -16,7 +17,8 @@ export const colors = {
     foreground: '#000',
     foregroundLight: '#52525b'
   },
-  primary: '#ff5058'
+  primary: '#ff5058',
+  white: '#fff'
 }
 
 export const layout = {

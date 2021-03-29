@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   package="app.mittens">
 
   <uses-permission android:name="android.permission.INTERNET" />
@@ -13,15 +14,18 @@
 
     <meta-data
       android:name="com.google.firebase.messaging.default_notification_icon"
-      android:resource="@drawable/ic_notification" />
+      android:resource="@drawable/ic_notification"
+      tools:replace="android:resource" />
 
     <meta-data
       android:name="com.google.firebase.messaging.default_notification_color"
-      android:resource="@color/primary" />
+      android:resource="@color/primary"
+      tools:replace="android:resource" />
 
     <meta-data
       android:name="com.google.firebase.messaging.default_notification_channel_id"
-      android:value="@string/default_notification_channel_id" />
+      android:value="@string/default_notification_channel_id"
+      tools:replace="android:value" />
 
     <activity
       android:name=".MainActivity"
@@ -32,7 +36,16 @@
 
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data
+          android:host="github"
+          android:scheme="mittens" />
+
       </intent-filter>
 
     </activity>

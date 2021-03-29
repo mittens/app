@@ -3,10 +3,11 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "generate": "graphql-codegen",
     "ios": "react-native run-ios --simulator 'iPhone 12 Pro Max'",
-    "start": "react-native start",
     "lint": "eslint src --ext .ts,.tsx",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "react-native start"
   },
   "dependencies": {
     "@apollo/client": "^3.3.13",
@@ -14,7 +15,6 @@
     "@react-native-async-storage/async-storage": "^1.14.1",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-firebase/app": "^11.2.0",
-    "@react-native-firebase/auth": "^11.2.0",
     "@react-native-firebase/messaging": "^11.2.0",
     "@react-navigation/bottom-tabs": "^5.11.8",
     "@react-navigation/native": "^5.9.3",
@@ -22,16 +22,21 @@
     "graphql": "^15.5.0",
     "react": "17.0.2",
     "react-native": "0.64.0",
+    "react-native-device-info": "^8.0.7",
     "react-native-fast-image": "^8.3.4",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-inappbrowser-reborn": "^3.5.1",
     "react-native-reanimated": "^2.0.1",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^2.18.1",
+    "react-native-svg": "^12.1.0",
     "react-sweet-state": "^2.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.13.13",
     "@babel/runtime": "^7.13.10",
+    "@graphql-codegen/cli": "^1.21.3",
+    "@graphql-codegen/typescript": "^1.21.1",
     "@react-native-community/eslint-config": "^2.0.0",
     "@react-native-community/eslint-plugin": "^1.1.0",
     "@types/react-native": "^0.64.2",

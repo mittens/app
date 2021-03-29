@@ -1,3 +1,5 @@
+export * from './graphql'
+
 export type Theme = {
   primary: string
   accent: string

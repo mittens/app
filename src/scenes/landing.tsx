@@ -1,12 +1,13 @@
 import { RouteProp } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import React, { FunctionComponent } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import Image from 'react-native-fast-image'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { img_mittens } from '../assets'
-import { useTheme } from '../hooks'
+import { Button } from '../components'
+import { useSignIn, useTheme } from '../hooks'
 import { AuthParams } from '../navigators'
 import { fonts, layout, typography } from '../styles'
 
@@ -18,12 +19,9 @@ type Props = {
 export const Landing: FunctionComponent<Props> = () => {
   const theme = useTheme()
 
+  const { loading, signIn } = useSignIn()
+
   const styles = StyleSheet.create({
-    content: {
-      alignItems: 'center',
-      flex: 1,
-      justifyContent: 'center'
-    },
     description: {
       ...typography.sm,
       ...fonts.regular,
@@ -36,7 +34,12 @@ export const Landing: FunctionComponent<Props> = () => {
       width: 400 / 3
     },
     main: {
-      flex: 1
+      alignItems: 'center',
+      flex: 1,
+      justifyContent: 'center'
+    },
+    signIn: {
+      marginTop: layout.space.xl * 2
     },
     title: {
       ...typography.xxxl,
@@ -49,13 +52,17 @@ export const Landing: FunctionComponent<Props> = () => {
 
   return (
     <SafeAreaView style={styles.main}>
-      <View style={styles.content}>
-        <Image source={img_mittens} style={styles.logo} />
-        <Text style={styles.title}>mittens</Text>
-        <Text style={styles.description}>
-          brings you push notifications {'\n'} from GitHub
-        </Text>
-      </View>
+      <Image source={img_mittens} style={styles.logo} />
+      <Text style={styles.title}>mittens</Text>
+      <Text style={styles.description}>
+        brings you push notifications {'\n'} from GitHub
+      </Text>
+      <Button
+        label="Sign in with GitHub"
+        loading={loading}
+        onPress={signIn}
+        style={styles.signIn}
+      />
     </SafeAreaView>
   )
 }
